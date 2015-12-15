@@ -2,7 +2,6 @@
 #   Hubot implementation of Michael Enger's d20.js
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
 #
 # Commands:
 #   hubot hello - <what the respond trigger does>
@@ -14,9 +13,15 @@
 # Author:
 #   Michael Fazio <mfazio23@gmail.com>
 
-module.exports = (robot) ->
-  robot.respond /hello/, (res) ->
-    res.reply "hello!"
+d20 = require 'd20'
 
-  robot.hear /orly/, ->
-    res.send "yarly"
+module.exports = (robot) ->
+
+  robot.respond /roll (.*)/i, (msg) ->
+    roll = d20.roll(msg.match[1])
+    msg.reply roll
+
+  robot.respond /verbose roll (.*)/i, (msg) ->
+    roll = d20.roll(msg.match[1], true)
+    rollTotal = roll.reduce (t, s) -> t + s
+    msg.reply rollTotal + " " + JSON.stringify roll
