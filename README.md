@@ -1,8 +1,6 @@
 # hubot-d20
 
-Hubot implementation of Michael Enger's d20.js
-
-See [`src/hubot-d20.coffee`](src/hubot-d20.coffee) for full documentation.
+Hubot implementation of [Michael Enger's d20.js](https://github.com/michaelenger/d20.js).
 
 ## Installation
 
@@ -21,6 +19,9 @@ Then add **hubot-d20** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot hello
-hubot>> hello!
+mfazio23>> hubot roll 3d20
+hubot>> @mfazio23 19
+
+mfazio23>> hubot verbose roll 3d20
+hubot>> @mfazio23 23 [4,8,11]
 ```
