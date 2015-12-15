@@ -1,7 +1,7 @@
 {
   "name": "hubot-d20",
   "description": "Hubot implementation of Michael Enger's d20.js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Michael Fazio <mfazio23@gmail.com>",
   "license": "MIT",
   "keywords": "hubot hubot-scripts d20",
